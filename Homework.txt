@@ -1,0 +1,77 @@
+1. На локальном репозитории сделать ветки для:
+- Postman
+git branch Postman
+
+- Jmeter
+git branch Jmeter
+
+- CheckLists
+git branch CheckLists
+
+- Bag Reports
+git branch Bug_Reports
+
+- SQL
+git branch SQL
+
+- Charles
+git branch Charles
+
+- Mobile testing
+git branch Mobile_testing
+
+2. Запушить все ветки на внешний репозиторий
+git push origin --all
+
+3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
+git checkout Bug_Reports
+vim bugreport.txt
+i
+Title:
+Priority:
+Short description:
+Enviroment:
+Steps to reproduce:
+Expected result:
+Actual result:
+Attachments:
+esc
+:wq
+
+4. Запушить структуру багрепорта на внешний репозиторий
+git add bugreport.txt
+git commit -m "adding bugreport structure"
+git push
+
+5. Вмержить ветку Bag Reports в Main
+git checkout main
+git merge Bug_Reports
+
+6. Запушить main на внешний репозиторий.
+git push
+
+7. В ветке CheckLists набросать структуру чек листа.
+git checkout CheckLists
+vim CheckListStructure.txt
+i
+1. The application can be installed             Y/N
+2. The application can be started               Y/N
+3. The user can acess the application           Y/N
+4. The user can perform elementary navigation   Y/N
+5. The functions are available and accesible    Y/N
+6. It's possible to change the information      Y/N
+7. The user can navigate from application       Y/N
+esc
+:wq
+
+8. Запушить структуру на внешний репозиторий
+git add CheckListStructure.txt
+git commit -m "add a simple checklist"
+git push
+
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+Переключиться на ветку CheckLists -> выбрать ветки CheckLists и main -> кликнуть на кнопку "Compare & pull request" -> кликнуть на кнопку "create pull request" -> кликнуть "Merge pull request" + "Confrim merge"
+
+10. Синхронизировать Внешнюю и Локальную ветки Main
+git checkout main
+git pull
